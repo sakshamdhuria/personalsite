@@ -428,37 +428,42 @@ function LifeList({ entries, favoritePhotos }) {
         </button>
       </div>
 
-      {activeTab === "blog" ? (
-        entries.map((entry) => (
-          <article className="life-card" key={entry.title}>
+      <div
+        className={`life-panel ${activeTab === "photos" ? "life-panel--scrollable" : ""}`}
+        role="tabpanel"
+      >
+        {activeTab === "blog" ? (
+          entries.map((entry) => (
+            <article className="life-card" key={entry.title}>
+              <div className="life-card__header">
+                <p>{entry.date}</p>
+                <h2>{entry.title}</h2>
+              </div>
+
+              <p className="life-card__description">{entry.description}</p>
+
+              <div className="life-photo-grid">
+                {entry.photos.map((photo) => (
+                  <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
+                ))}
+              </div>
+            </article>
+          ))
+        ) : (
+          <article className="life-card">
             <div className="life-card__header">
-              <p>{entry.date}</p>
-              <h2>{entry.title}</h2>
+              <p>Photo roll</p>
+              <h2>Favorite photos</h2>
             </div>
 
-            <p className="life-card__description">{entry.description}</p>
-
             <div className="life-photo-grid">
-              {entry.photos.map((photo) => (
+              {favoritePhotos.map((photo) => (
                 <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
               ))}
             </div>
           </article>
-        ))
-      ) : (
-        <article className="life-card">
-          <div className="life-card__header">
-            <p>Photo roll</p>
-            <h2>Favorite photos</h2>
-          </div>
-
-          <div className="life-photo-grid">
-            {favoritePhotos.map((photo) => (
-              <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
-            ))}
-          </div>
-        </article>
-      )}
+        )}
+      </div>
     </div>
   );
 }
