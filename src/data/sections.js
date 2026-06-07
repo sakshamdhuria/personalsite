@@ -26,12 +26,10 @@ export const sections = [
   },
   {
     id: "life",
-    eyebrow: "Random life things",
-    title: "Random life things",
-    body:
-      "A small collection of trips, photos, and personal artifacts that do not really belong on a resume.",
+    eyebrow: "Side quests",
+    title: "Side quests",
     items: ["Trips", "Photos", "Little memories"],
-    cta: "Browse life things",
+    cta: "Browse side quests",
   },
   {
     id: "off-clock",

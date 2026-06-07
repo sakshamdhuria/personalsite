@@ -407,7 +407,7 @@ function LifeList({ entries, favoritePhotos }) {
 
   return (
     <div className="life-list">
-      <div className="life-tabs" role="tablist" aria-label="Random life things">
+      <div className="life-tabs" role="tablist" aria-label="Side quests">
         <button
           className={`life-tabs__tab ${activeTab === "blog" ? "is-active" : ""}`}
           type="button"
@@ -525,7 +525,7 @@ function DetailPage({
       <article className="detail-card">
         <p className="eyebrow">{section.eyebrow}</p>
         <h1 id="page-title">{section.title}</h1>
-        <p className="detail-copy">{section.body}</p>
+        {section.body ? <p className="detail-copy">{section.body}</p> : null}
 
         {section.id === "experience" ? (
           <ExperienceList entries={experienceEntries} />

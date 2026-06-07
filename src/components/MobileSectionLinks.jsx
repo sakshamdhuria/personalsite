@@ -10,7 +10,7 @@ function MobileSectionLinks({ sections, onSectionClick }) {
         >
           <p className="eyebrow">{section.eyebrow}</p>
           <h2>{section.title}</h2>
-          <p>{section.body}</p>
+          {section.body ? <p>{section.body}</p> : null}
         </button>
       ))}
     </section>
