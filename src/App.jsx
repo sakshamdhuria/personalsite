@@ -71,13 +71,13 @@ function App() {
     theme === "light" ? deskLightBackground : deskBackground;
 
   const goToSection = (id) => {
-    window.history.pushState(null, "", `/${id}`);
+    window.history.pushState(null, "", `${import.meta.env.BASE_URL}${id}`);
     setRouteId(id);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const goHome = () => {
-    window.history.pushState(null, "", "/");
+    window.history.pushState(null, "", import.meta.env.BASE_URL);
     setRouteId(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
