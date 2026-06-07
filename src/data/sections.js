@@ -19,8 +19,6 @@ export const sections = [
     id: "experience",
     eyebrow: "Experience",
     title: "Where I have worked",
-    body:
-      "A quick look at internships, teams, and the kinds of product and engineering problems I have spent time with.",
     items: ["Engineering work", "Product thinking", "Team projects"],
     cta: "Open experience",
   },
