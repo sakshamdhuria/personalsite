@@ -2,6 +2,7 @@ function DeskScene({
   background,
   deskView,
   hotspots,
+  exploreMode,
   onHotspotClick,
   onTouchStart,
   onTouchMove,
@@ -26,10 +27,13 @@ function DeskScene({
             alt="A desk with a laptop, camera, notebook, graduation cap, books, and personal objects."
           />
 
-          <div className="hotspot-layer" aria-label="Interactive desk sections">
+          <div
+            className={`hotspot-layer ${exploreMode ? "is-exploring" : ""}`}
+            aria-label="Interactive desk sections"
+          >
             {hotspots.map((hotspot) => (
               <button
-                className="hotspot"
+                className={`hotspot ${exploreMode ? "is-active" : ""}`}
                 key={hotspot.id}
                 type="button"
                 style={{

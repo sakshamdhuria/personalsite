@@ -3,6 +3,7 @@ import deskBackground from "./assets/ui/desk-dark.webp";
 import deskLightBackground from "./assets/ui/desk-light.webp";
 import DeskScene from "./components/DeskScene.jsx";
 import DetailPage from "./components/DetailPage.jsx";
+import ExploreDeskToggle from "./components/ExploreDeskToggle.jsx";
 import MobileSectionLinks from "./components/MobileSectionLinks.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import { contactLinks } from "./data/contact.js";
@@ -32,6 +33,7 @@ function App() {
   const [routeId, setRouteId] = useState(getRouteId);
   const [deskView, setDeskView] = useState({ x: 0, y: 0, scale: 1 });
   const [theme, setTheme] = useState(getStoredTheme);
+  const [exploreMode, setExploreMode] = useState(false);
   const gestureRef = useRef(null);
   const minScaleRef = useRef(1);
   const suppressClickRef = useRef(false);
@@ -46,6 +48,24 @@ function App() {
   useEffect(() => {
     localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (routeId) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key !== "?" || event.metaKey || event.ctrlKey || event.altKey) {
+        return;
+      }
+
+      event.preventDefault();
+      setExploreMode((current) => !current);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [routeId]);
 
   useEffect(() => {
     const syncDeskFit = () => {
@@ -173,7 +193,12 @@ function App() {
       return;
     }
 
+    setExploreMode(false);
     goToSection(id);
+  };
+
+  const toggleExploreMode = () => {
+    setExploreMode((current) => !current);
   };
 
   const toggleTheme = () => {
@@ -210,10 +235,12 @@ function App() {
       style={{ "--desk-bg": `url(${selectedDeskBackground})` }}
     >
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      <ExploreDeskToggle isActive={exploreMode} onToggle={toggleExploreMode} />
       <DeskScene
         background={selectedDeskBackground}
         deskView={deskView}
         hotspots={hotspots}
+        exploreMode={exploreMode}
         onHotspotClick={handleHotspotClick}
         onTouchStart={handleDeskTouchStart}
         onTouchMove={handleDeskTouchMove}
