@@ -7,10 +7,33 @@ export const projectEntries = [
     description:
       "A Rubik's cube solving robot I built with Arduino, a webcam, a Kociemba-style solver, and servos that physically twist the cube into place.",
     content: [
-      "RoboCuber started as a hardware project, but the part that made it interesting was the solver behind it. The big background idea is God's number: for a standard 3x3 cube, every legal position can be solved in 20 moves or fewer if you are allowed to pick the best possible route.",
-      "That sounds almost impossible when you remember how large the cube state space is. The full cube has over 43 quintillion legal positions, and even if you describe the search more narrowly you are still thinking in the quintillions. The trick is not to search everything. A Kociemba-style two-phase solver first pushes the cube into a restricted subgroup, then solves from there.",
-      "The pruning tree is the key optimization. Before solving, the program builds pruning tables: compact lookup tables that say, for a compressed version of the cube state, at least how many moves are still needed. That precomputation is the slow 'training' step and can take a while depending on the table size and machine, but it only has to be done once.",
-      "After that, the live solve is much faster. Instead of exploring every branch, the solver checks the pruning table and immediately throws away branches that cannot beat the current best path. So the search goes from a ridiculous quintillion-scale space to a small, guided tree that can usually find a good near-optimal solution in seconds or less; the robot's physical turning is often the slower part.",
+      "RoboCuber started as a random summer project after I watched one of those MIT-style robots solve a Rubik's cube in a fraction of a second. I obviously was not about to build something at that level, but it made me want to see if I could build a rough version that at least moved a real cube on its own.",
+      "The first version was very homemade: popsicle sticks, an Arduino, and a few servo motors trying their best to turn the cube. Around then I also made a small piece of software that could scramble the cube and follow a list of moves, but it was not really a solver yet. It was more like the robot could obey instructions, but it could not figure them out.",
+      {
+        textBefore:
+          "A couple years later, during winter break back home from college, I came back to the project and spent something like 60 hours just researching Rubik's cube solving. That was when I learned about ",
+        link: {
+          label: "God's number",
+          href: "https://www.cube20.org/",
+        },
+        textAfter:
+          ": every legal 3x3 cube position can be solved in 20 moves or fewer if you choose the best possible path.",
+      },
+      "That fact is wild once you think about the size of the search space. A standard cube has over 43 quintillion legal positions. If you checked one billion states every second, that would still take well over a thousand years to scan through. So the impressive part is not just solving the cube, it is cutting the search down enough that solving becomes practical.",
+      {
+        textBefore:
+          "I ended up implementing a Kociemba-style solver in C. The rough idea is that instead of trying to solve the cube in one huge search, ",
+        link: {
+          label: "Kociemba's algorithm",
+          href: "https://kociemba.org/math/pruning.htm",
+        },
+        textAfter:
+          " splits it into two phases. Phase one gets the cube into a restricted group where the orientations and slice pieces are cleaned up. Phase two solves from inside that smaller world using a more limited move set.",
+      },
+      "A lot of my time went into building the pruning table lookup logic itself. The table is basically the solver's memory: given a compressed cube state, it can quickly estimate how many moves away that state is from the target group or solved state. Instead of thinking about all 43 quintillion cube states, Kociemba's phase-two search works inside a group of about 19.5 billion states, which is roughly 2.2 billion times smaller.",
+      "Even that is still huge, so the pruning-table representation gets compressed further. One common trick is to ignore enough detail to get the table down to about 1.6 billion representative states, which is around 26.6 billion times smaller than the full cube space while still giving useful lower-bound estimates.",
+      "Once that worked, the annoying part was generating those values in the first place. I remember trying to speed up the pre-calculation step with more GPU or HPC-style thinking, because the lookup is fast once the table exists, but filling the table is where you really feel the size of the cube state space.",
+      "The pruning tables are what make the search usable. Before solving, the program precomputes tables that give lower bounds for how far certain compressed cube states are from the goal. Then during the actual solve, if a branch cannot possibly beat the current best solution, the solver cuts it off immediately. The precomputation takes time, but once those tables exist, finding a good solution is fast enough that the robot's physical turning becomes the slow part.",
     ],
     links: [
       {
