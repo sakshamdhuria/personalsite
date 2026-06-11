@@ -18,7 +18,7 @@ export const lifeEntries = [
       "Drove 1,650 miles over 7 days with my 2 best friends through Mendocino, Napa Valley, the Redwoods, the Oregon Coast, Crater Lake, and Mount Shasta.",
     content: [
       "Drove 1,650 miles over 7 days with my 2 best friends through Mendocino, Napa Valley, the Redwoods, the Oregon Coast, Crater Lake, and Mount Shasta.",
-      "This is the kind of sidequest that deserves a home outside the tiny card: a loose photo-first recap of the stops, roads, and little memories from the trip.",
+      "Incoming blog soon.",
     ],
     photos: [
       { src: coastPhoto, alt: "Oregon coast stop from the NorCal trip" },
