@@ -34,6 +34,7 @@ export const projectEntries = [
       "Even that is still huge, so the pruning-table representation gets compressed further. One common trick is to ignore enough detail to get the table down to about 1.6 billion representative states, which is around 26.6 billion times smaller than the full cube space while still giving useful lower-bound estimates.",
       "Once that worked, the annoying part was generating those values in the first place. I remember trying to speed up the pre-calculation step with more GPU or HPC-style thinking, because the lookup is fast once the table exists, but filling the table is where you really feel the size of the cube state space.",
       "The pruning tables are what make the search usable. Before solving, the program precomputes tables that give lower bounds for how far certain compressed cube states are from the goal. Then during the actual solve, if a branch cannot possibly beat the current best solution, the solver cuts it off immediately. The precomputation takes time, but once those tables exist, finding a good solution is fast enough that the robot's physical turning becomes the slow part.",
+      "I also have a short demo video linked below if you want to see the robot actually turning the cube instead of just reading about the solver.",
     ],
     links: [
       {
@@ -47,6 +48,11 @@ export const projectEntries = [
         href: "https://youtu.be/o328AWIkfyE",
       },
     ],
+    featuredVideo: {
+      title: "RoboCuber demo video",
+      embedUrl: "https://www.youtube-nocookie.com/embed/o328AWIkfyE",
+      href: "https://youtu.be/o328AWIkfyE",
+    },
     accent: "is-robocuber",
   },
   {

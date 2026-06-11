@@ -526,6 +526,9 @@ function BlogParagraph({ paragraph }) {
 }
 
 function ProjectBlogEntry({ entry }) {
+  const blogLinks =
+    entry.blogLinks?.filter((link) => link.href !== entry.featuredVideo?.href) ?? [];
+
   return (
     <article className={`project-card project-card--article ${entry.accent}`}>
       <h2>{entry.name}</h2>
@@ -539,13 +542,34 @@ function ProjectBlogEntry({ entry }) {
         ))}
       </div>
 
-      {entry.blogLinks?.length ? (
+      {blogLinks.length ? (
         <div className="project-card__links">
-          {entry.blogLinks.map((link) => (
+          {blogLinks.map((link) => (
             <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
               {link.label}
             </a>
           ))}
+        </div>
+      ) : null}
+
+      {entry.featuredVideo ? (
+        <div className="project-video-block">
+          <div className="project-video-block__header">
+            <span>{entry.featuredVideo.title}</span>
+            <a href={entry.featuredVideo.href} target="_blank" rel="noreferrer">
+              Open on YouTube
+            </a>
+          </div>
+
+          <div className="project-video">
+            <iframe
+              src={entry.featuredVideo.embedUrl}
+              title={entry.featuredVideo.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
         </div>
       ) : null}
 
