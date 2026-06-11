@@ -403,6 +403,21 @@ function OffClockList({ entries }) {
   );
 }
 
+function BlogActionLink({ href, label = "Open blog", onClick }) {
+  return (
+    <a
+      className="blog-link"
+      href={href}
+      onClick={(event) => {
+        event.preventDefault();
+        onClick();
+      }}
+    >
+      {label}
+    </a>
+  );
+}
+
 function LifeList({ entries, favoritePhotos, onEntryClick }) {
   const [activeTab, setActiveTab] = useState("blog");
 
@@ -438,31 +453,18 @@ function LifeList({ entries, favoritePhotos, onEntryClick }) {
             const href = getRoutePath([getSectionPath("life"), "blog", entry.slug]);
 
             return (
-              <a
-                className="life-card-link"
-                href={href}
-                key={entry.title}
-                onClick={(event) => {
-                  event.preventDefault();
-                  onEntryClick(entry);
-                }}
-              >
-                <article className="life-card">
-                  <div className="life-card__header">
-                    <p>{entry.date}</p>
-                    <h2>{entry.title}</h2>
-                  </div>
+              <article className="life-card" key={entry.title}>
+                <div className="life-card__header">
+                  <p>{entry.date}</p>
+                  <h2>{entry.title}</h2>
+                </div>
 
-                  <p className="life-card__route">{href}</p>
-                  <p className="life-card__description">{entry.description}</p>
+                <p className="life-card__description">{entry.description}</p>
 
-                  <div className="life-photo-grid">
-                    {entry.photos.map((photo) => (
-                      <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
-                    ))}
-                  </div>
-                </article>
-              </a>
+                <div className="life-card__actions">
+                  <BlogActionLink href={href} onClick={() => onEntryClick(entry)} />
+                </div>
+              </article>
             );
           })
         ) : (
@@ -507,29 +509,107 @@ function LifeBlogEntry({ entry }) {
   );
 }
 
-function ProjectsList({ entries }) {
+function BlogParagraph({ paragraph }) {
+  if (typeof paragraph === "string") {
+    return <p>{paragraph}</p>;
+  }
+
+  return (
+    <p>
+      {paragraph.textBefore}
+      <a href={paragraph.link.href} target="_blank" rel="noreferrer">
+        {paragraph.link.label}
+      </a>
+      {paragraph.textAfter}
+    </p>
+  );
+}
+
+function ProjectBlogEntry({ entry }) {
+  return (
+    <article className={`project-card project-card--article ${entry.accent}`}>
+      <h2>{entry.name}</h2>
+
+      <div className="life-article-copy">
+        {entry.content.map((paragraph) => (
+          <BlogParagraph
+            key={typeof paragraph === "string" ? paragraph : paragraph.link.href}
+            paragraph={paragraph}
+          />
+        ))}
+      </div>
+
+      {entry.blogLinks?.length ? (
+        <div className="project-card__links">
+          {entry.blogLinks.map((link) => (
+            <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      ) : null}
+
+      {entry.image ? (
+        <img
+          className="project-card__image project-card__image--article"
+          src={entry.image.src}
+          alt={entry.image.alt}
+          loading="lazy"
+        />
+      ) : null}
+    </article>
+  );
+}
+
+function ProjectsList({ entries, onBlogClick }) {
   return (
     <div className="project-strip" aria-label="Project entries">
-      {entries.map((entry) => (
-        <article className={`project-card ${entry.accent}`} key={entry.name}>
-          {entry.image ? (
-            <img className="project-card__image" src={entry.image.src} alt={entry.image.alt} loading="lazy" />
-          ) : null}
+      {entries.map((entry) => {
+        const blogHref = entry.content
+          ? getRoutePath([getSectionPath("projects"), "blog", entry.slug])
+          : null;
+        const shouldShowPreviewImage = entry.image && !entry.content;
 
-          <h2>{entry.name}</h2>
-          <p className="project-card__summary">{entry.description}</p>
+        return (
+          <article className={`project-card ${entry.accent}`} key={entry.name}>
+            <h2>{entry.name}</h2>
 
-          {entry.links.length ? (
-            <div className="project-card__links">
-              {entry.links.map((link) => (
-                <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          ) : null}
-        </article>
-      ))}
+            {shouldShowPreviewImage ? (
+              <img
+                className="project-card__image"
+                src={entry.image.src}
+                alt={entry.image.alt}
+                loading="lazy"
+              />
+            ) : null}
+
+            <p className="project-card__summary">{entry.description}</p>
+
+            {blogHref || entry.links.length ? (
+              <div className="project-card__links">
+                {blogHref ? (
+                  <BlogActionLink href={blogHref} onClick={() => onBlogClick(entry)} />
+                ) : null}
+
+                {entry.links.map((link) => {
+                  const isExternal = /^https?:\/\//.test(link.href);
+
+                  return (
+                    <a
+                      href={link.href}
+                      key={link.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer" : undefined}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
+              </div>
+            ) : null}
+          </article>
+        );
+      })}
     </div>
   );
 }
@@ -557,12 +637,14 @@ function DetailPage({
   favoritePhotos,
   lifeEntry,
   lifeEntries,
+  projectEntry,
   projectEntries,
   offClockEntries,
   contactLinks,
   onBack,
   backLabel = "Back to desk",
   onLifeEntryClick,
+  onProjectBlogClick,
 }) {
   return (
     <section className="detail-page" aria-labelledby="page-title">
@@ -592,7 +674,11 @@ function DetailPage({
             />
           )
         ) : section.id === "projects" ? (
-          <ProjectsList entries={projectEntries} />
+          projectEntry ? (
+            <ProjectBlogEntry entry={projectEntry} />
+          ) : (
+            <ProjectsList entries={projectEntries} onBlogClick={onProjectBlogClick} />
+          )
         ) : section.id === "off-clock" ? (
           <OffClockList entries={offClockEntries} />
         ) : (

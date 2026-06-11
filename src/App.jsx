@@ -95,6 +95,13 @@ function App() {
 
     return lifeEntries.find((entry) => entry.slug === route.segments[2]) ?? null;
   }, [route.segments, routeId]);
+  const selectedProjectEntry = useMemo(() => {
+    if (routeId !== "projects" || route.segments[1] !== "blog") {
+      return null;
+    }
+
+    return projectEntries.find((entry) => entry.slug === route.segments[2]) ?? null;
+  }, [route.segments, routeId]);
   const selectedDeskBackground =
     theme === "light" ? deskLightBackground : deskBackground;
 
@@ -115,6 +122,16 @@ function App() {
       null,
       "",
       getRoutePath([getSectionPath("life"), "blog", entry.slug]),
+    );
+    setRoute(getRoute());
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const goToProjectBlog = (entry) => {
+    window.history.pushState(
+      null,
+      "",
+      getRoutePath([getSectionPath("projects"), "blog", entry.slug]),
     );
     setRoute(getRoute());
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -238,12 +255,26 @@ function App() {
           favoritePhotos={favoritePhotos}
           lifeEntry={selectedLifeEntry}
           lifeEntries={lifeEntries}
+          projectEntry={selectedProjectEntry}
           projectEntries={projectEntries}
           offClockEntries={offClockEntries}
           contactLinks={contactLinks}
-          onBack={selectedLifeEntry ? () => goToSection("life") : goHome}
-          backLabel={selectedLifeEntry ? "Back to side quests" : "Back to desk"}
+          onBack={
+            selectedLifeEntry
+              ? () => goToSection("life")
+              : selectedProjectEntry
+                ? () => goToSection("projects")
+                : goHome
+          }
+          backLabel={
+            selectedLifeEntry
+              ? "Back to side quests"
+              : selectedProjectEntry
+                ? "Back to projects"
+                : "Back to desk"
+          }
           onLifeEntryClick={goToLifeEntry}
+          onProjectBlogClick={goToProjectBlog}
         />
       </main>
     );
