@@ -7,7 +7,15 @@ export const projectEntries = [
     description:
       "A Rubik's cube solving robot I built with Arduino, a webcam, a Kociemba-style solver, and servos that physically twist the cube into place.",
     content: [
-      "RoboCuber started as a random summer project after I watched one of those MIT-style robots solve a Rubik's cube in a fraction of a second. I obviously was not about to build something at that level, but it made me want to see if I could build a rough version that at least moved a real cube on its own.",
+      {
+        textBefore: "RoboCuber started as a random summer project after I watched an ",
+        link: {
+          label: "MIT robot",
+          href: "https://www.youtube.com/shorts/VW7GYxWKV58",
+        },
+        textAfter:
+          " solve a Rubik's cube in 0.38 seconds. I obviously was not about to build something at that level, but it made me want to see if I could build a rough version that at least moved a real cube on its own.",
+      },
       "The first version was very homemade: popsicle sticks, an Arduino, and a few servo motors trying their best to turn the cube. Around then I also made a small piece of software that could scramble the cube and follow a list of moves, but it was not really a solver yet. It was more like the robot could obey instructions, but it could not figure them out.",
       {
         textBefore:

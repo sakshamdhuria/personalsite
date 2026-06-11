@@ -1676,12 +1676,14 @@ h2 {
 
 @media (max-width: 620px) {
   body {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .page-shell {
     min-height: 100svh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .life-photo-grid {
