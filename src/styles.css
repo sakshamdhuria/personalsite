@@ -875,6 +875,21 @@ h2 {
   --project-accent-b: rgba(59, 130, 246, 0.12);
 }
 
+.project-card.is-aoc {
+  --project-accent-a: rgba(235, 245, 65, 0.22);
+  --project-accent-b: rgba(34, 197, 94, 0.12);
+}
+
+.project-card__image {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  object-position: left top;
+  border: 1px solid rgba(245, 230, 201, 0.14);
+  border-radius: 16px;
+  background: rgba(4, 7, 5, 0.36);
+}
+
 .project-card h2 {
   margin: 0;
   font-size: clamp(1.2rem, 2.5vw, 1.65rem);
@@ -926,6 +941,11 @@ h2 {
 
 .page-shell[data-theme="light"] .project-card__summary {
   color: rgba(33, 22, 11, 0.78);
+}
+
+.page-shell[data-theme="light"] .project-card__image {
+  border-color: rgba(80, 53, 20, 0.14);
+  background: rgba(255, 249, 235, 0.42);
 }
 
 .page-shell[data-theme="light"] .project-card__links a {
@@ -1016,6 +1036,27 @@ h2 {
   gap: 1rem;
 }
 
+.life-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 22px;
+}
+
+.life-card-link .life-card {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.life-card-link:hover .life-card,
+.life-card-link:focus-visible .life-card {
+  border-color: rgba(118, 183, 145, 0.5);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+  transform: translateY(-2px);
+}
+
 .life-panel--scrollable {
   max-height: min(34rem, 58vh);
   overflow-y: auto;
@@ -1066,6 +1107,11 @@ h2 {
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
 }
 
+.life-card--article {
+  margin-top: 1.45rem;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+}
+
 .life-card__header {
   display: grid;
   gap: 0.35rem;
@@ -1074,7 +1120,8 @@ h2 {
 .life-card__header p,
 .life-card__header h2,
 .life-card__route,
-.life-card__description {
+.life-card__description,
+.life-article-copy p {
   margin: 0;
 }
 
@@ -1103,10 +1150,26 @@ h2 {
   line-height: 1.55;
 }
 
+.life-article-copy {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 54rem;
+}
+
+.life-article-copy p {
+  color: rgba(245, 230, 201, 0.82);
+  font-size: clamp(1rem, 1.8vw, 1.14rem);
+  line-height: 1.75;
+}
+
 .life-photo-grid {
   max-width: 54rem;
   column-count: 3;
   column-gap: 0.7rem;
+}
+
+.life-photo-grid--article {
+  max-width: 62rem;
 }
 
 .life-photo-grid img {
@@ -1126,6 +1189,12 @@ h2 {
     radial-gradient(circle at 0% 0%, rgba(77, 144, 102, 0.18), transparent 38%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.62), transparent 44%),
     linear-gradient(160deg, rgba(255, 246, 222, 0.72), rgba(235, 216, 184, 0.42));
+}
+
+.page-shell[data-theme="light"] .life-card-link:hover .life-card,
+.page-shell[data-theme="light"] .life-card-link:focus-visible .life-card {
+  border-color: rgba(45, 118, 73, 0.34);
+  box-shadow: 0 24px 54px rgba(76, 45, 15, 0.16);
 }
 
 .page-shell[data-theme="light"] .life-tabs__tab {
@@ -1160,6 +1229,10 @@ h2 {
 
 .page-shell[data-theme="light"] .life-card__description {
   color: #235d38;
+}
+
+.page-shell[data-theme="light"] .life-article-copy p {
+  color: rgba(33, 22, 11, 0.76);
 }
 
 .page-shell[data-theme="light"] .life-photo-grid img {

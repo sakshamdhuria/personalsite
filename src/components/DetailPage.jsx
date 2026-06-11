@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getRoutePath, getSectionPath } from "../utils/routing.js";
 
 function getExperienceClass(company) {
   if (company.includes("OpenAI")) return "is-openai";
@@ -402,7 +403,7 @@ function OffClockList({ entries }) {
   );
 }
 
-function LifeList({ entries, favoritePhotos }) {
+function LifeList({ entries, favoritePhotos, onEntryClick }) {
   const [activeTab, setActiveTab] = useState("blog");
 
   return (
@@ -433,22 +434,37 @@ function LifeList({ entries, favoritePhotos }) {
         role="tabpanel"
       >
         {activeTab === "blog" ? (
-          entries.map((entry) => (
-            <article className="life-card" key={entry.title}>
-              <div className="life-card__header">
-                <p>{entry.date}</p>
-                <h2>{entry.title}</h2>
-              </div>
+          entries.map((entry) => {
+            const href = getRoutePath([getSectionPath("life"), "blog", entry.slug]);
 
-              <p className="life-card__description">{entry.description}</p>
+            return (
+              <a
+                className="life-card-link"
+                href={href}
+                key={entry.title}
+                onClick={(event) => {
+                  event.preventDefault();
+                  onEntryClick(entry);
+                }}
+              >
+                <article className="life-card">
+                  <div className="life-card__header">
+                    <p>{entry.date}</p>
+                    <h2>{entry.title}</h2>
+                  </div>
 
-              <div className="life-photo-grid">
-                {entry.photos.map((photo) => (
-                  <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
-                ))}
-              </div>
-            </article>
-          ))
+                  <p className="life-card__route">{href}</p>
+                  <p className="life-card__description">{entry.description}</p>
+
+                  <div className="life-photo-grid">
+                    {entry.photos.map((photo) => (
+                      <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
+                    ))}
+                  </div>
+                </article>
+              </a>
+            );
+          })
         ) : (
           <article className="life-card">
             <div className="life-card__header">
@@ -468,21 +484,50 @@ function LifeList({ entries, favoritePhotos }) {
   );
 }
 
+function LifeBlogEntry({ entry }) {
+  return (
+    <article className="life-card life-card--article">
+      <div className="life-card__header">
+        <p>{entry.date}</p>
+        <h2>{entry.title}</h2>
+      </div>
+
+      <div className="life-article-copy">
+        {entry.content.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+
+      <div className="life-photo-grid life-photo-grid--article">
+        {entry.photos.map((photo) => (
+          <img src={photo.src} alt={photo.alt} key={photo.src} loading="lazy" />
+        ))}
+      </div>
+    </article>
+  );
+}
+
 function ProjectsList({ entries }) {
   return (
     <div className="project-strip" aria-label="Project entries">
       {entries.map((entry) => (
         <article className={`project-card ${entry.accent}`} key={entry.name}>
+          {entry.image ? (
+            <img className="project-card__image" src={entry.image.src} alt={entry.image.alt} loading="lazy" />
+          ) : null}
+
           <h2>{entry.name}</h2>
           <p className="project-card__summary">{entry.description}</p>
 
-          <div className="project-card__links">
-            {entry.links.map((link) => (
-              <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
-          </div>
+          {entry.links.length ? (
+            <div className="project-card__links">
+              {entry.links.map((link) => (
+                <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </article>
       ))}
     </div>
@@ -510,16 +555,19 @@ function DetailPage({
   experienceEntries,
   educationTabs,
   favoritePhotos,
+  lifeEntry,
   lifeEntries,
   projectEntries,
   offClockEntries,
   contactLinks,
   onBack,
+  backLabel = "Back to desk",
+  onLifeEntryClick,
 }) {
   return (
     <section className="detail-page" aria-labelledby="page-title">
       <button className="back-link" type="button" onClick={onBack}>
-        Back to desk
+        {backLabel}
       </button>
 
       <article className="detail-card">
@@ -534,7 +582,15 @@ function DetailPage({
         ) : section.id === "education" ? (
           <EducationTabs tabs={educationTabs} />
         ) : section.id === "life" ? (
-          <LifeList entries={lifeEntries} favoritePhotos={favoritePhotos} />
+          lifeEntry ? (
+            <LifeBlogEntry entry={lifeEntry} />
+          ) : (
+            <LifeList
+              entries={lifeEntries}
+              favoritePhotos={favoritePhotos}
+              onEntryClick={onLifeEntryClick}
+            />
+          )
         ) : section.id === "projects" ? (
           <ProjectsList entries={projectEntries} />
         ) : section.id === "off-clock" ? (

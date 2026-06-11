@@ -21,7 +21,7 @@ import {
   getTouchMidpoint,
   getTouchPoint,
 } from "./utils/deskViewport.js";
-import { getRouteId } from "./utils/routing.js";
+import { getRoute, getRoutePath, getSectionPath } from "./utils/routing.js";
 
 const THEME_STORAGE_KEY = "personal-site-theme";
 
@@ -30,7 +30,8 @@ function getStoredTheme() {
 }
 
 function App() {
-  const [routeId, setRouteId] = useState(getRouteId);
+  const [route, setRoute] = useState(getRoute);
+  const routeId = route.routeId;
   const [deskView, setDeskView] = useState({ x: 0, y: 0, scale: 1 });
   const [theme, setTheme] = useState(getStoredTheme);
   const [exploreMode, setExploreMode] = useState(false);
@@ -39,7 +40,7 @@ function App() {
   const suppressClickRef = useRef(false);
 
   useEffect(() => {
-    const handlePopState = () => setRouteId(getRouteId());
+    const handlePopState = () => setRoute(getRoute());
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
@@ -87,18 +88,35 @@ function App() {
     () => sections.find((section) => section.id === routeId),
     [routeId],
   );
+  const selectedLifeEntry = useMemo(() => {
+    if (routeId !== "life" || route.segments[1] !== "blog") {
+      return null;
+    }
+
+    return lifeEntries.find((entry) => entry.slug === route.segments[2]) ?? null;
+  }, [route.segments, routeId]);
   const selectedDeskBackground =
     theme === "light" ? deskLightBackground : deskBackground;
 
   const goToSection = (id) => {
-    window.history.pushState(null, "", `${import.meta.env.BASE_URL}${id}`);
-    setRouteId(id);
+    window.history.pushState(null, "", getRoutePath([getSectionPath(id)]));
+    setRoute(getRoute());
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const goHome = () => {
     window.history.pushState(null, "", import.meta.env.BASE_URL);
-    setRouteId(null);
+    setRoute(getRoute());
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const goToLifeEntry = (entry) => {
+    window.history.pushState(
+      null,
+      "",
+      getRoutePath([getSectionPath("life"), "blog", entry.slug]),
+    );
+    setRoute(getRoute());
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -218,11 +236,14 @@ function App() {
           experienceEntries={experienceEntries}
           educationTabs={educationTabs}
           favoritePhotos={favoritePhotos}
+          lifeEntry={selectedLifeEntry}
           lifeEntries={lifeEntries}
           projectEntries={projectEntries}
           offClockEntries={offClockEntries}
           contactLinks={contactLinks}
-          onBack={goHome}
+          onBack={selectedLifeEntry ? () => goToSection("life") : goHome}
+          backLabel={selectedLifeEntry ? "Back to side quests" : "Back to desk"}
+          onLifeEntryClick={goToLifeEntry}
         />
       </main>
     );
