@@ -11,6 +11,14 @@ import snowMountainPhoto from "../assets/favorites/snow-mountain.webp";
 
 export const lifeEntries = [
   {
+    slug: "boston-roundnet-tournament",
+    date: "June 2026",
+    title: "Boston Roundnet Tournament",
+    description:
+      "Finally qualified for Premier with Gaurav, repping Coast 2 Coast. We went undefeated at 12-0, won the final 21-7, and held every team to 15 points or fewer.",
+    highlightsUrl: "https://www.youtube.com/watch?v=VSRGrpHHU6Y",
+  },
+  {
     slug: "norcal-road-trip",
     date: "August 2025",
     title: "NorCal Road Trip",
@@ -18,7 +26,6 @@ export const lifeEntries = [
       "Drove 1,650 miles over 7 days with my 2 best friends through Mendocino, Napa Valley, the Redwoods, the Oregon Coast, Crater Lake, and Mount Shasta.",
     content: [
       "Drove 1,650 miles over 7 days with my 2 best friends through Mendocino, Napa Valley, the Redwoods, the Oregon Coast, Crater Lake, and Mount Shasta.",
-      "Incoming blog soon.",
     ],
     photos: [
       { src: coastPhoto, alt: "Oregon coast stop from the NorCal trip" },

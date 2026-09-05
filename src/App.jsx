@@ -93,7 +93,7 @@ function App() {
       return null;
     }
 
-    return lifeEntries.find((entry) => entry.slug === route.segments[2]) ?? null;
+    return lifeEntries.find((entry) => entry.slug === route.segments[2] && entry.content) ?? null;
   }, [route.segments, routeId]);
   const selectedProjectEntry = useMemo(() => {
     if (routeId !== "projects" || route.segments[1] !== "blog") {

@@ -25,10 +25,10 @@ function ExperienceList({ entries }) {
 
           <div className="experience-card__meta">
             <p>{entry.role}</p>
-            <p>{entry.location}</p>
+            {entry.location && <p>{entry.location}</p>}
           </div>
 
-          <p className="experience-card__summary">{entry.details}</p>
+          {entry.details && <p className="experience-card__summary">{entry.details}</p>}
         </article>
       ))}
     </div>
@@ -431,7 +431,7 @@ function LifeList({ entries, favoritePhotos, onEntryClick }) {
           aria-selected={activeTab === "blog"}
           onClick={() => setActiveTab("blog")}
         >
-          Blog-ish
+          Adventures
         </button>
         <button
           className={`life-tabs__tab ${activeTab === "photos" ? "is-active" : ""}`}
@@ -462,7 +462,13 @@ function LifeList({ entries, favoritePhotos, onEntryClick }) {
                 <p className="life-card__description">{entry.description}</p>
 
                 <div className="life-card__actions">
-                  <BlogActionLink href={href} onClick={() => onEntryClick(entry)} />
+                  {entry.highlightsUrl ? (
+                    <a className="blog-link" href={entry.highlightsUrl} target="_blank" rel="noopener noreferrer">
+                      Watch highlights
+                    </a>
+                  ) : (
+                    <BlogActionLink href={href} label="View photos" onClick={() => onEntryClick(entry)} />
+                  )}
                 </div>
               </article>
             );

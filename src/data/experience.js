@@ -1,15 +1,22 @@
 export const experienceEntries = [
   {
+    company: "Citadel Securities",
+    role: "Quantitative Developer Intern",
+    date: "Jun 2027 - Aug 2027",
+    location: "New York City, NY",
+    details: "Joining summer 2027.",
+  },
+  {
     company: "OpenAI",
     role: "Member of Technical Staff Intern",
-    date: "Sept 2026 - Dec 2026",
+    date: "Sept 2026 - Present",
     location: "San Francisco, CA",
-    details: "Incoming Fall 2026 MTS intern.",
+    details: "Part of the Ads org.",
   },
   {
     company: "Databricks",
     role: "Software Engineer Intern",
-    date: "May 2026 - Present",
+    date: "May 2026 - Sept 2026",
     location: "Sunnyvale, CA",
     details: "Building Spark data lineage and observability tooling in Scala.",
   },

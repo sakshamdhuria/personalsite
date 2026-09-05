@@ -19,5 +19,5 @@ export const offClockEntries = [
     icon: "puzzle",
     category: "puzzles",
   },
-  { label: "Rubik's Cube: 13 seconds", icon: "cube", category: "puzzles" },
+  { label: "Rubik's Cube: 8 seconds", icon: "cube", category: "puzzles" },
 ];
