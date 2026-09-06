@@ -28,7 +28,13 @@ function ExperienceList({ entries }) {
             {entry.location && <p>{entry.location}</p>}
           </div>
 
-          {entry.details && <p className="experience-card__summary">{entry.details}</p>}
+          {Array.isArray(entry.details) ? (
+            <ul className="experience-card__summary experience-card__projects">
+              {entry.details.map((detail) => <li key={detail}>{detail}</li>)}
+            </ul>
+          ) : entry.details ? (
+            <p className="experience-card__summary">{entry.details}</p>
+          ) : null}
           {entry.patent && (
             <div className="experience-card__patent">
               <span className="experience-card__patent-label">Patent in filing</span>

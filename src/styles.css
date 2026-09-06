@@ -1076,6 +1076,14 @@ h2 {
   line-height: 1.6;
 }
 
+.experience-card__projects {
+  padding-left: 1.2rem;
+}
+
+.experience-card__projects li + li {
+  margin-top: 0.35rem;
+}
+
 .page-shell[data-theme="light"] .experience-card {
   border-color: rgba(80, 53, 20, 0.16);
   background:
