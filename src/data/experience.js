@@ -26,6 +26,10 @@ export const experienceEntries = [
     date: "Jan 2026 - May 2026",
     location: "Santa Clara, CA",
     details: "Built compiler fuzzing tools and reported TileIR correctness bugs.",
+    patent: {
+      title: "An AI Factory for Automating Functional Compiler Bug Detection",
+      status: "Approved by NVIDIA and filed for U.S. patent review with guidance from counsel.",
+    },
   },
   {
     company: "Capital One",

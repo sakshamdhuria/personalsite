@@ -29,6 +29,13 @@ function ExperienceList({ entries }) {
           </div>
 
           {entry.details && <p className="experience-card__summary">{entry.details}</p>}
+          {entry.patent && (
+            <div className="experience-card__patent">
+              <span className="experience-card__patent-label">Patent in progress</span>
+              <h3>{entry.patent.title}</h3>
+              <p className="experience-card__summary">{entry.patent.status}</p>
+            </div>
+          )}
         </article>
       ))}
     </div>
