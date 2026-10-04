@@ -105,16 +105,4 @@ export const projectEntries = [
     ],
     accent: "is-aoc",
   },
-  {
-    name: "statsCap",
-    description:
-      "I don't really watch NBA games, I just like the numbers. statsCap pulls box scores from recent game days and ranks who actually had the best night statistically. It's offline right now because the API broke somewhere along the way, but I might come back and fix it.",
-    links: [
-      {
-        label: "stats-cap.vercel.app",
-        href: "https://stats-cap.vercel.app/",
-      },
-    ],
-    accent: "is-statscap",
-  },
 ];
