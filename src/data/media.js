@@ -81,7 +81,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-14",
-    "title": "It Could Happen to Anyone",
+    "title": "It Could Happen to You",
     "category": "Movies",
     "date": "2026-05-27"
   },
@@ -171,7 +171,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-29",
-    "title": "Spirit",
+    "title": "Spirit: Stallion of the Cimarron",
     "category": "Movies",
     "date": "2026-10-18"
   },
