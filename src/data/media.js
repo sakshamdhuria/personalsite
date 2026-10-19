@@ -15,7 +15,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-3",
-    "title": "The Curse of the Black Pearl",
+    "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
     "category": "Movies",
     "date": "2026-03-27"
   },
@@ -81,7 +81,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-14",
-    "title": "It could happen to anyone",
+    "title": "It Could Happen to Anyone",
     "category": "Movies",
     "date": "2026-05-27"
   },
@@ -105,7 +105,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-18",
-    "title": "Voicemails for Issabelle",
+    "title": "Voicemails for Isabelle",
     "category": "Movies",
     "date": "2026-07-04"
   },
@@ -123,7 +123,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-21",
-    "title": "Spiderman Brand New Day",
+    "title": "Spider-Man: Brand New Day",
     "category": "Movies",
     "date": "2026-08-30"
   },
@@ -141,13 +141,13 @@ export const mediaEntries = [
   },
   {
     "id": "media-24",
-    "title": "21 Jump St",
+    "title": "21 Jump Street",
     "category": "Movies",
     "date": "2026-10-08"
   },
   {
     "id": "media-25",
-    "title": "22 Jumpst",
+    "title": "22 Jump Street",
     "category": "Movies",
     "date": "2026-10-08"
   },
@@ -177,7 +177,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-30",
-    "title": "Et",
+    "title": "E.T. the Extra-Terrestrial",
     "category": "Movies",
     "date": "2026-10-18"
   },
@@ -231,7 +231,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-39",
-    "title": "7ds",
+    "title": "The Seven Deadly Sins",
     "category": "Anime",
     "date": "2026-01-14"
   },
@@ -243,13 +243,13 @@ export const mediaEntries = [
   },
   {
     "id": "media-41",
-    "title": "Aokana",
+    "title": "AOKANA: Four Rhythm Across the Blue",
     "category": "Anime",
     "date": "2026-01-14"
   },
   {
     "id": "media-42",
-    "title": "Demon Slayer",
+    "title": "Demon Slayer: Kimetsu no Yaiba",
     "category": "Anime",
     "date": "2026-01-14"
   },
@@ -285,7 +285,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-48",
-    "title": "My Dress Up Darling",
+    "title": "My Dress-Up Darling",
     "category": "Anime",
     "date": "2026-05-30"
   },
@@ -315,7 +315,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-53",
-    "title": "Sakamoto Days S1 (22)",
+    "title": "Sakamoto Days — Season 1 (22 episodes)",
     "category": "Anime",
     "date": "2026-08-12"
   },
@@ -327,7 +327,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-55",
-    "title": "The Ramparts of Ice - S1",
+    "title": "The Ramparts of Ice — Season 1",
     "category": "Anime",
     "date": "2026-09-13"
   },
@@ -357,7 +357,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-60",
-    "title": "HIMYM",
+    "title": "How I Met Your Mother",
     "category": "TV Shows",
     "date": "2026-02-20"
   },
@@ -375,7 +375,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-63",
-    "title": "XO Kitty",
+    "title": "XO, Kitty",
     "category": "TV Shows",
     "date": "2026-04-07"
   },
@@ -393,25 +393,25 @@ export const mediaEntries = [
   },
   {
     "id": "media-66",
-    "title": "Heroes S1",
+    "title": "Heroes — Season 1",
     "category": "TV Shows",
     "date": "2026-08-03"
   },
   {
     "id": "media-67",
-    "title": "B99",
+    "title": "Brooklyn Nine-Nine",
     "category": "TV Shows",
     "date": "2026-10-03"
   },
   {
     "id": "media-68",
-    "title": "Queens Gambit",
+    "title": "The Queen’s Gambit",
     "category": "TV Shows",
     "date": "2026-10-03"
   },
   {
     "id": "media-69",
-    "title": "18x2 Beyond Youthful Days",
+    "title": "18×2 Beyond Youthful Days",
     "category": "Dramas",
     "date": "2026-09-25",
     "dramaTypes": [
@@ -430,7 +430,7 @@ export const mediaEntries = [
   },
   {
     "id": "media-71",
-    "title": "Hometown Cha Cha",
+    "title": "Hometown Cha-Cha-Cha",
     "category": "Dramas",
     "date": "2026-10-05",
     "dramaTypes": [
