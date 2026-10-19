@@ -387,7 +387,6 @@ function getHobbyCategoryClass(category) {
 function OffClockList({ entries }) {
   return (
     <div className="off-clock-grid">
-      <a className="blog-link" href={getRoutePath(["media"])}>Browse my watch journal →</a>
       <article className="off-clock-card">
         <div className="hobby-labels">
           {entries.map((item) => {

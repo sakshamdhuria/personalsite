@@ -27,7 +27,6 @@ export default function MediaPage({ onBack }) {
     <div className="media-intro">
       <p className="media-eyebrow"><span /> MEDIA</p>
       <h1 id="media-title">Movies, anime & TV</h1>
-      <p className="media-description">What I’ve watched, collected in one place.</p>
       <div className="media-totals"><div><strong>{mediaEntries.length}</strong><span>titles in the collection</span></div></div>
     </div>
     <div className="media-library">

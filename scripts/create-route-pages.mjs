@@ -1,5 +1,6 @@
-import { mkdir, copyFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
-// Give GitHub Pages a real entry point for direct links to the media page.
+// Keep direct links working while asking search engines not to index this unlisted page.
 await mkdir("dist/media", { recursive: true });
-await copyFile("dist/index.html", "dist/media/index.html");
+const html = await readFile("dist/index.html", "utf8");
+await writeFile("dist/media/index.html", html.replace("</head>", '<meta name="robots" content="noindex, nofollow" /></head>'));
