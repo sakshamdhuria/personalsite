@@ -3,6 +3,7 @@ import deskBackground from "./assets/ui/desk-dark.webp";
 import deskLightBackground from "./assets/ui/desk-light.webp";
 import DeskScene from "./components/DeskScene.jsx";
 import DetailPage from "./components/DetailPage.jsx";
+import MediaPage from "./components/MediaPage.jsx";
 import ExploreDeskToggle from "./components/ExploreDeskToggle.jsx";
 import MobileSectionLinks from "./components/MobileSectionLinks.jsx";
 import ThemeToggle from "./components/ThemeToggle.jsx";
@@ -239,6 +240,10 @@ function App() {
   const toggleTheme = () => {
     setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
   };
+
+  if (routeId === "media") {
+    return <main className="page-shell" data-theme={theme}><ThemeToggle theme={theme} onToggle={toggleTheme} /><MediaPage onBack={goHome} /></main>;
+  }
 
   if (currentSection) {
     return (

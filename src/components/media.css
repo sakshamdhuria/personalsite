@@ -1,0 +1,39 @@
+.media-page { --media-muted: #aaa596; --media-line: #ffffff1a; --media-accent: #dfba72; max-width: 1280px; margin: auto; padding: 35px 64px 50px; color: #ede9df; }
+[data-theme="light"] .media-page { --media-muted: #6c665a; --media-line: #30271626; --media-accent: #8a5b12; color: #30291e; }
+.media-nav { display:flex; align-items:center; justify-content:space-between; padding:0 35px 28px 0; border-bottom:1px solid var(--media-line); gap:20px; }
+.media-nav button { border:0; background:none; color:var(--media-muted); padding:0; cursor:pointer; }
+.media-nav>span { font-size:10px; letter-spacing:.15em; } .media-nav i { padding:0 12px; color:var(--media-accent); }
+.media-intro { padding:80px 0 60px; }
+.media-eyebrow { font-size:11px; letter-spacing:.22em; color:var(--media-accent); display:flex; align-items:center; gap:10px; }
+.media-eyebrow>span { width:6px; height:6px; border-radius:50%; background:var(--media-accent); }
+.media-intro h1 { font-family:Georgia,serif; font-weight:400; letter-spacing:-.065em; font-size:clamp(48px,7vw,92px); line-height:1.1; margin:25px 0; }
+.media-intro em { color:var(--media-accent); font-weight:400; }
+.media-description { font-size:16px; line-height:1.8; color:var(--media-muted); }
+.media-totals { display:flex; gap:55px; margin-top:42px; }
+.media-totals>div { display:flex; gap:12px; align-items:center; } .media-totals strong { font-family:Georgia,serif; font-size:30px; font-weight:400; } .media-totals span { color:var(--media-muted); font-size:11px; max-width:80px; line-height:1.6; }
+.media-library-heading { display:flex; align-items:center; justify-content:space-between; padding:24px 0; border-top:1px solid var(--media-line); } .media-library-heading h2 { font-weight:500; font-size:17px; margin:0; } .media-library-heading h2 span { color:var(--media-muted); font:11px monospace; margin-left:14px; } .media-library-heading p { color:var(--media-muted); font-size:11px; }
+.media-filters { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:23px; } .media-filters button { background:transparent; border:1px solid var(--media-line); border-radius:6px; padding:11px 16px; color:var(--media-muted); cursor:pointer; font-size:12px; } .media-filters button span { margin-left:14px; opacity:.7; font-size:10px; } .media-filters button.is-selected { background:var(--media-accent); border-color:var(--media-accent); color:#1c170e; }
+.media-tools { display:flex; gap:10px; } .media-search { display:flex; align-items:center; flex:1; gap:10px; padding:0 14px; border:1px solid var(--media-line); border-radius:6px; } .media-search>span:first-child { font-size:25px; color:var(--media-muted); } .media-search input { width:100%; border:0; background:none; color:inherit; padding:13px 0; font:inherit; font-size:12px; min-width:0; } .media-search input:focus { outline:none; } .media-search:focus-within { outline:2px solid var(--media-accent); } .media-tools select { height:100%; padding:12px 28px 12px 12px; background:var(--site-bg); color:inherit; border:1px solid var(--media-line); border-radius:6px; font:inherit; font-size:12px; }
+.media-results { margin:25px 0 14px; color:var(--media-muted); font-size:11px; }
+.media-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; align-items:start; } .media-entry { padding:22px; border:1px solid var(--media-line); border-radius:8px; background:color-mix(in srgb,currentColor 2%,transparent); min-height:181px; display:flex; flex-direction:column; transition:border-color .2s,transform .2s; } .media-entry:hover { border-color:var(--media-accent); transform:translateY(-2px); } .media-entry-top { display:flex; align-items:center; justify-content:space-between; gap:8px; } .media-category { font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:var(--media-accent); } [data-category="Anime"] .media-category { color:#acb9a0; } [data-category="TV Shows"] .media-category { color:#9eb7c9; } [data-category="Dramas"] .media-category { color:#d3a4b2; } [data-theme="light"] .media-category { color:var(--media-accent); } .media-entry h3 { font-family:Georgia,serif; font-weight:400; font-size:23px; line-height:1.3; margin:21px 0 26px; } .media-entry-bottom { margin-top:auto; } .media-entry-bottom>p { color:var(--media-muted); font-size:10px; margin:0 0 14px; }
+.media-footer { margin-top:45px; border-top:1px solid var(--media-line); padding-top:25px; display:flex; justify-content:space-between; gap:25px; color:var(--media-muted); } .media-footer>span { font:italic 20px Georgia,serif; } .media-footer p { margin:0; font-size:10px; line-height:1.8; max-width:370px; }
+.media-empty { text-align:center; padding:60px 20px; } .media-empty p { color:var(--media-muted); } .media-empty button { padding:10px 20px; border:1px solid var(--media-line); background:none; color:inherit; border-radius:6px; cursor:pointer; } .media-sr { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; } .media-page :focus-visible { outline:2px solid var(--media-accent); outline-offset:4px; }
+@media(max-width:900px) { .media-page { padding:30px; } .media-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .media-totals { gap:30px; } }
+@media(max-width:560px) { .media-page { padding:25px 20px; } .media-nav>span { display:none; } .media-intro { padding:55px 0 35px; } .media-totals { gap:22px; flex-wrap:wrap; } .media-totals>div { gap:8px; } .media-totals strong { font-size:26px; } .media-totals span { font-size:10px; max-width:65px; } .media-library-heading { align-items:start; gap:15px; } .media-library-heading p { max-width:110px; margin:0; line-height:1.6; text-align:right; } .media-filters button { padding:10px 12px; } .media-tools { flex-wrap:wrap; } .media-search { flex-basis:100%; } .media-tools>label:not(.media-search) { flex:1; } .media-tools select { width:100%; } .media-grid { grid-template-columns:1fr; } .media-entry { min-height:165px; } .media-footer { flex-direction:column; } }
+@media(prefers-reduced-motion:reduce) { .media-entry { transition:none; } .media-entry:hover { transform:none; } }
+
+/* Drama colors are shared by subtype filters and their cards. */
+.media-page [data-drama-type="K-drama"] { --drama-color: #d3a4b2; }
+.media-page [data-drama-type="C-drama"] { --drama-color: #b3c69a; }
+.media-page [data-drama-type="J-drama"] { --drama-color: #a9b9df; }
+.media-page [data-drama-type="Taiwanese"] { --drama-color: #dfba72; }
+.media-drama-filters button[data-drama-type]:not([data-drama-type="All dramas"]) { color: var(--drama-color); border-color: color-mix(in srgb, var(--drama-color) 35%, transparent); }
+.media-drama-filters button[data-drama-type].is-selected:not([data-drama-type="All dramas"]) { color: #191610; background: var(--drama-color); border-color: var(--drama-color); }
+.media-entry[data-drama-type] { border-top: 2px solid var(--drama-color); }
+.media-entry[data-drama-type] .media-category { color: var(--drama-color); }
+.media-entry[data-drama-type]:hover { border-color: var(--drama-color); }
+[data-theme="light"] .media-page [data-drama-type="K-drama"] { --drama-color: #93475f; }
+[data-theme="light"] .media-page [data-drama-type="C-drama"] { --drama-color: #526d31; }
+[data-theme="light"] .media-page [data-drama-type="J-drama"] { --drama-color: #4b60a0; }
+[data-theme="light"] .media-page [data-drama-type="Taiwanese"] { --drama-color: #8a5b12; }
+[data-theme="light"] .media-drama-filters button[data-drama-type].is-selected:not([data-drama-type="All dramas"]) { color: #fffaf0; }

@@ -1,4 +1,5 @@
 export const sections = [
+  { id: "media", eyebrow: "Watch journal", title: "Movies, anime & more", body: "A running log of the stories I spend time with." },
   {
     id: "projects",
     eyebrow: "Projects",
