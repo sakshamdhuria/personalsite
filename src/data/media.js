@@ -255,13 +255,13 @@ export const mediaEntries = [
   },
   {
     "id": "media-43",
-    "title": "Frieren",
+    "title": "Frieren: Beyond Journey’s End",
     "category": "Anime",
     "date": "2026-01-14"
   },
   {
     "id": "media-44",
-    "title": "Toradora",
+    "title": "Toradora!",
     "category": "Anime",
     "date": "2026-03-01"
   },
