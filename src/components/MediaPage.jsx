@@ -58,7 +58,7 @@ export default function MediaPage({ onBack }) {
           <button type="button" disabled={!selectedGenres.length} onClick={() => setSelectedGenres([])}>Clear genres</button>
           {genres.map((tag) => <label key={tag}>
             <input type="checkbox" checked={selectedGenres.includes(tag)} onChange={() => toggleGenre(tag)} />
-            {tag}
+            {tag} ({mediaEntries.filter((entry) => entry.genres?.includes(tag)).length})
           </label>)}
         </fieldset>
       </details><label><span className="media-sr">Sort collection</span><select value={sort} onChange={(event) => setSort(event.target.value)}><option value="recent">Recently logged</option><option value="oldest">Oldest logged</option><option value="title">Title A–Z</option></select></label></div>
