@@ -37,3 +37,15 @@
 [data-theme="light"] .media-page [data-drama-type="J-drama"] { --drama-color: #4b60a0; }
 [data-theme="light"] .media-page [data-drama-type="Taiwanese"] { --drama-color: #8a5b12; }
 [data-theme="light"] .media-drama-filters button[data-drama-type].is-selected:not([data-drama-type="All dramas"]) { color: #fffaf0; }
+
+.media-genres { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 0 0.75rem; padding: 0; }
+.media-genres li { border: 1px solid var(--media-line); border-radius: 999px; padding: 0.2rem 0.5rem; color: var(--media-muted); font-size: 0.7rem; }
+@media (max-width: 700px) { .media-tools { flex-wrap: wrap; } }
+
+.media-genre-picker { position: relative; font-size: 12px; }
+.media-genre-picker summary { cursor: pointer; border: 1px solid var(--media-line); border-radius: 6px; padding: 12px; white-space: nowrap; }
+.media-genre-picker fieldset { position: absolute; z-index: 2; right: 0; width: min(220px, 75vw); max-height: 280px; overflow: auto; margin: 6px 0 0; padding: 8px; border: 1px solid var(--media-line); border-radius: 6px; background: var(--site-bg); }
+.media-genre-picker fieldset label { display: flex; align-items: center; gap: 8px; padding: 6px; cursor: pointer; }
+.media-genre-picker input { accent-color: var(--media-accent); }
+.media-genre-picker button { padding: 6px; color: inherit; background: none; border: 0; cursor: pointer; }
+.media-genre-picker button:disabled { opacity: .5; cursor: default; }

@@ -1,413 +1,705 @@
-// Transcribed from Crescent #life-log on October 19, 2026.
-// One entry per title; dates are latest message dates, not inferred completion dates.
-export const mediaEntries = [
+[
   {
     "id": "media-1",
     "title": "People We Meet on Vacation",
     "category": "Movies",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-2",
     "title": "Your Place or Mine",
     "category": "Movies",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-3",
     "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
     "category": "Movies",
-    "date": "2026-03-27"
+    "date": "2026-03-27",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ]
   },
   {
     "id": "media-4",
     "title": "Pirates of the Caribbean: Dead Man’s Chest",
     "category": "Movies",
-    "date": "2026-03-29"
+    "date": "2026-03-29",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ]
   },
   {
     "id": "media-5",
     "title": "Work It",
     "category": "Movies",
-    "date": "2026-04-22"
+    "date": "2026-04-22",
+    "genres": [
+      "Comedy",
+      "Dance"
+    ]
   },
   {
     "id": "media-6",
     "title": "Letters to Juliet",
     "category": "Movies",
-    "date": "2026-04-23"
+    "date": "2026-04-23",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-7",
     "title": "27 Dresses",
     "category": "Movies",
-    "date": "2026-05-05"
+    "date": "2026-05-05",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-8",
     "title": "You, Always",
     "category": "Movies",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "genres": [
+      "Romance",
+      "Drama"
+    ]
   },
   {
     "id": "media-9",
     "title": "12th Fail",
     "category": "Movies",
-    "date": "2026-05-11"
+    "date": "2026-05-11",
+    "genres": [
+      "Biography",
+      "Drama"
+    ]
   },
   {
     "id": "media-10",
     "title": "The Conjuring: Last Rites",
     "category": "Movies",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "genres": [
+      "Horror",
+      "Supernatural"
+    ]
   },
   {
     "id": "media-11",
     "title": "Groundhog Day",
     "category": "Movies",
-    "date": "2026-05-17"
+    "date": "2026-05-17",
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ]
   },
   {
     "id": "media-12",
     "title": "Indian Sweets and Spices",
     "category": "Movies",
-    "date": "2026-05-20"
+    "date": "2026-05-20",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ]
   },
   {
     "id": "media-13",
     "title": "The Age of Adaline",
     "category": "Movies",
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "genres": [
+      "Romance",
+      "Fantasy",
+      "Drama"
+    ]
   },
   {
     "id": "media-14",
     "title": "It Could Happen to You",
     "category": "Movies",
-    "date": "2026-05-27"
+    "date": "2026-05-27",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-15",
     "title": "The Proposal",
     "category": "Movies",
-    "date": "2026-05-31"
+    "date": "2026-05-31",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-16",
     "title": "The Wedding Planner",
     "category": "Movies",
-    "date": "2026-06-07"
+    "date": "2026-06-07",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-17",
     "title": "The Wedding Date",
     "category": "Movies",
-    "date": "2026-06-14"
+    "date": "2026-06-14",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-18",
     "title": "Voicemails for Isabelle",
     "category": "Movies",
-    "date": "2026-07-04"
+    "date": "2026-07-04",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-19",
     "title": "Cocktail 2",
     "category": "Movies",
-    "date": "2026-08-19"
+    "date": "2026-08-19",
+    "genres": [
+      "Romance",
+      "Drama"
+    ]
   },
   {
     "id": "media-20",
     "title": "The Chalk Line",
     "category": "Movies",
-    "date": "2026-08-23"
+    "date": "2026-08-23",
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Horror"
+    ]
   },
   {
     "id": "media-21",
     "title": "Spider-Man: Brand New Day",
     "category": "Movies",
-    "date": "2026-08-30"
+    "date": "2026-08-30",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ]
   },
   {
     "id": "media-22",
     "title": "Zodiac",
     "category": "Movies",
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ]
   },
   {
     "id": "media-23",
     "title": "White Chicks",
     "category": "Movies",
-    "date": "2026-09-06"
+    "date": "2026-09-06",
+    "genres": [
+      "Comedy",
+      "Crime"
+    ]
   },
   {
     "id": "media-24",
     "title": "21 Jump Street",
     "category": "Movies",
-    "date": "2026-10-08"
+    "date": "2026-10-08",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ]
   },
   {
     "id": "media-25",
     "title": "22 Jump Street",
     "category": "Movies",
-    "date": "2026-10-08"
+    "date": "2026-10-08",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Crime"
+    ]
   },
   {
     "id": "media-26",
     "title": "What’s Your Number?",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-27",
     "title": "50 First Dates",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-28",
     "title": "Grown Ups",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Comedy"
+    ]
   },
   {
     "id": "media-29",
     "title": "Spirit: Stallion of the Cimarron",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Animation",
+      "Adventure",
+      "Western"
+    ]
   },
   {
     "id": "media-30",
     "title": "E.T. the Extra-Terrestrial",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Sci-Fi",
+      "Adventure",
+      "Family"
+    ]
   },
   {
     "id": "media-31",
     "title": "Just Go with It",
     "category": "Movies",
-    "date": "2026-10-18"
+    "date": "2026-10-18",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-32",
     "title": "One Piece",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Action"
+    ]
   },
   {
     "id": "media-33",
     "title": "Bleach",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Supernatural"
+    ]
   },
   {
     "id": "media-34",
     "title": "Naruto",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ]
   },
   {
     "id": "media-35",
     "title": "Death Note",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Supernatural"
+    ]
   },
   {
     "id": "media-36",
     "title": "Vinland Saga",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Action",
+      "Adventure",
+      "History"
+    ]
   },
   {
     "id": "media-37",
     "title": "Blue Box",
     "category": "Anime",
-    "date": "2025-12-25"
+    "date": "2025-12-25",
+    "genres": [
+      "Romance",
+      "Sports"
+    ]
   },
   {
     "id": "media-38",
     "title": "Horimiya",
     "category": "Anime",
-    "date": "2026-01-13"
+    "date": "2026-01-13",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-39",
     "title": "The Seven Deadly Sins",
     "category": "Anime",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ]
   },
   {
     "id": "media-40",
     "title": "Your Lie in April",
     "category": "Anime",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "genres": [
+      "Romance",
+      "Drama",
+      "Music"
+    ]
   },
   {
     "id": "media-41",
     "title": "AOKANA: Four Rhythm Across the Blue",
     "category": "Anime",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "genres": [
+      "Sports",
+      "Sci-Fi"
+    ]
   },
   {
     "id": "media-42",
     "title": "Demon Slayer: Kimetsu no Yaiba",
     "category": "Anime",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Supernatural"
+    ]
   },
   {
     "id": "media-43",
     "title": "Frieren: Beyond Journey’s End",
     "category": "Anime",
-    "date": "2026-01-14"
+    "date": "2026-01-14",
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Drama"
+    ]
   },
   {
     "id": "media-44",
     "title": "Toradora!",
     "category": "Anime",
-    "date": "2026-03-01"
+    "date": "2026-03-01",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-45",
     "title": "Wind Breaker",
     "category": "Anime",
-    "date": "2026-03-04"
+    "date": "2026-03-04",
+    "genres": [
+      "Action",
+      "Drama"
+    ]
   },
   {
     "id": "media-46",
     "title": "Wolf Girl and Black Prince",
     "category": "Anime",
-    "date": "2026-03-15"
+    "date": "2026-03-15",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-47",
     "title": "Ao Haru Ride",
     "category": "Anime",
-    "date": "2026-04-12"
+    "date": "2026-04-12",
+    "genres": [
+      "Romance",
+      "Drama"
+    ]
   },
   {
     "id": "media-48",
     "title": "My Dress-Up Darling",
     "category": "Anime",
-    "date": "2026-05-30"
+    "date": "2026-05-30",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-49",
     "title": "Kotaro Lives Alone",
     "category": "Anime",
-    "date": "2026-06-30"
+    "date": "2026-06-30",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ]
   },
   {
     "id": "media-50",
     "title": "Tada Never Falls in Love",
     "category": "Anime",
-    "date": "2026-07-26"
+    "date": "2026-07-26",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-51",
     "title": "Mob Psycho 100",
     "category": "Anime",
-    "date": "2026-08-09"
+    "date": "2026-08-09",
+    "genres": [
+      "Action",
+      "Comedy",
+      "Supernatural"
+    ]
   },
   {
     "id": "media-52",
     "title": "Suzume",
     "category": "Anime",
-    "date": "2026-08-10"
+    "date": "2026-08-10",
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ]
   },
   {
     "id": "media-53",
     "title": "Sakamoto Days — Season 1 (22 episodes)",
     "category": "Anime",
-    "date": "2026-08-12"
+    "date": "2026-08-12",
+    "genres": [
+      "Action",
+      "Comedy"
+    ]
   },
   {
     "id": "media-54",
     "title": "A Galaxy Next Door",
     "category": "Anime",
-    "date": "2026-08-26"
+    "date": "2026-08-26",
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Sci-Fi"
+    ]
   },
   {
     "id": "media-55",
     "title": "The Ramparts of Ice — Season 1",
     "category": "Anime",
-    "date": "2026-09-13"
+    "date": "2026-09-13",
+    "genres": [
+      "Romance",
+      "Drama"
+    ]
   },
   {
     "id": "media-56",
     "title": "Ted Lasso",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Sports"
+    ]
   },
   {
     "id": "media-57",
     "title": "Lost in Space",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Sci-Fi",
+      "Adventure"
+    ]
   },
   {
     "id": "media-58",
     "title": "Gilmore Girls",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Comedy",
+      "Drama"
+    ]
   },
   {
     "id": "media-59",
     "title": "Gossip Girl",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Drama",
+      "Romance"
+    ]
   },
   {
     "id": "media-60",
     "title": "How I Met Your Mother",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Comedy",
+      "Romance"
+    ]
   },
   {
     "id": "media-61",
     "title": "Friends",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Comedy",
+      "Romance"
+    ]
   },
   {
     "id": "media-62",
     "title": "From",
     "category": "TV Shows",
-    "date": "2026-02-20"
+    "date": "2026-02-20",
+    "genres": [
+      "Horror",
+      "Mystery"
+    ]
   },
   {
     "id": "media-63",
     "title": "XO, Kitty",
     "category": "TV Shows",
-    "date": "2026-04-07"
+    "date": "2026-04-07",
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
   },
   {
     "id": "media-64",
     "title": "Running Point",
     "category": "TV Shows",
-    "date": "2026-05-01"
+    "date": "2026-05-01",
+    "genres": [
+      "Comedy",
+      "Sports"
+    ]
   },
   {
     "id": "media-65",
     "title": "Finding Her Edge",
     "category": "TV Shows",
-    "date": "2026-05-07"
+    "date": "2026-05-07",
+    "genres": [
+      "Romance",
+      "Drama",
+      "Sports"
+    ]
   },
   {
     "id": "media-66",
     "title": "Heroes — Season 1",
     "category": "TV Shows",
-    "date": "2026-08-03"
+    "date": "2026-08-03",
+    "genres": [
+      "Sci-Fi",
+      "Drama"
+    ]
   },
   {
     "id": "media-67",
     "title": "Brooklyn Nine-Nine",
     "category": "TV Shows",
-    "date": "2026-10-03"
+    "date": "2026-10-03",
+    "genres": [
+      "Comedy",
+      "Crime"
+    ]
   },
   {
     "id": "media-68",
     "title": "The Queen’s Gambit",
     "category": "TV Shows",
-    "date": "2026-10-03"
+    "date": "2026-10-03",
+    "genres": [
+      "Drama"
+    ]
   },
   {
     "id": "media-69",
@@ -417,6 +709,10 @@ export const mediaEntries = [
     "dramaTypes": [
       "J-drama",
       "Taiwanese"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
     ]
   },
   {
@@ -426,6 +722,10 @@ export const mediaEntries = [
     "date": "2026-09-25",
     "dramaTypes": [
       "C-drama"
+    ],
+    "genres": [
+      "Romance",
+      "Drama"
     ]
   },
   {
@@ -435,6 +735,10 @@ export const mediaEntries = [
     "date": "2026-10-05",
     "dramaTypes": [
       "K-drama"
+    ],
+    "genres": [
+      "Romance",
+      "Comedy"
     ]
   },
   {
@@ -444,6 +748,10 @@ export const mediaEntries = [
     "date": "2026-10-07",
     "dramaTypes": [
       "K-drama"
+    ],
+    "genres": [
+      "Romance",
+      "Comedy"
     ]
   },
   {
@@ -453,6 +761,41 @@ export const mediaEntries = [
     "date": "2026-10-16",
     "dramaTypes": [
       "K-drama"
+    ],
+    "genres": [
+      "Romance",
+      "Comedy"
+    ]
+  },
+  {
+    "id": "media-74",
+    "date": "2026-10-23",
+    "category": "Movies",
+    "title": "Sully",
+    "genres": [
+      "Biography",
+      "Drama"
+    ]
+  },
+  {
+    "id": "media-75",
+    "date": "2026-11-01",
+    "category": "Movies",
+    "title": "The Prestige",
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Thriller"
+    ]
+  },
+  {
+    "id": "media-76",
+    "date": "2026-11-03",
+    "category": "Movies",
+    "title": "She’s Out of My League",
+    "genres": [
+      "Romance",
+      "Comedy"
     ]
   }
-];
+]
