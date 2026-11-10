@@ -1,3 +1,4 @@
+import { getRoutePath } from "../utils/routing.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import mediaEntries from "../data/media.json";
 import "./media.css";
@@ -41,7 +42,7 @@ export default function MediaPage({ onBack }) {
   const reset = () => { setCategory("All"); setDramaType("All dramas"); setQuery(""); setSelectedGenres([]); setYear("All years"); setSort("recent"); };
 
   return <section className="media-page" aria-labelledby="media-title">
-    <header className="media-nav"><button onClick={onBack} type="button">← Back to desk</button><span>SAKSHAM DHURIA <i>/</i> MEDIA</span></header>
+    <header className="media-nav"><button onClick={onBack} type="button">← Back to desk</button><a href={getRoutePath(["media", "stats"])}>Media stats →</a></header>
     <div className="media-intro">
       <p className="media-eyebrow"><span /> MEDIA</p>
       <h1 id="media-title">Movies, anime & TV</h1>
