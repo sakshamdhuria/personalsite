@@ -797,5 +797,25 @@
       "Romance",
       "Comedy"
     ]
+  },
+  {
+    "id": "media-77",
+    "date": "2026-11-24",
+    "category": "Movies",
+    "title": "The Da Vinci Code",
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ]
+  },
+  {
+    "id": "media-78",
+    "date": "2026-11-24",
+    "category": "Movies",
+    "title": "Raanjhanaa",
+    "genres": [
+      "Romance",
+      "Drama"
+    ]
   }
 ]
