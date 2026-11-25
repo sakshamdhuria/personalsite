@@ -817,5 +817,19 @@
       "Romance",
       "Drama"
     ]
+  },
+  {
+    "id": "media-79",
+    "title": "Crash Landing on You",
+    "category": "Dramas",
+    "date": "2026-11-25",
+    "dramaTypes": [
+      "K-drama"
+    ],
+    "genres": [
+      "Romance",
+      "Drama",
+      "Comedy"
+    ]
   }
 ]
