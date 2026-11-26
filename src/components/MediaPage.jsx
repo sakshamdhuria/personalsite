@@ -66,7 +66,7 @@ export default function MediaPage({ onBack }) {
       <p className="media-results" role="status">{visible.length} {visible.length === 1 ? "title" : "titles"}{category !== "All" ? ` · ${category}${category === "Dramas" && dramaType !== "All dramas" ? ` · ${dramaType}` : ""}` : " · All media"}</p>
       <div className="media-grid">{visible.map((entry) => <article className="media-entry" data-category={entry.category} data-drama-type={entry.dramaTypes?.[0]} key={entry.id}><div className="media-entry-top"><span className="media-category">{entry.category === "Dramas" && entry.dramaTypes?.length ? entry.dramaTypes.join(" / ") : entry.category}</span></div><h3>{entry.title}</h3>{entry.genres?.length > 0 && <ul className="media-genres" aria-label="Genres">{entry.genres.map((tag) => <li key={tag}>{tag}</li>)}</ul>}<div className="media-entry-bottom"><p>Logged <time dateTime={entry.date}>{dateLabel(entry.date)}</time></p></div></article>)}</div>
       {visible.length === 0 && <div className="media-empty"><h3>No titles found.</h3><p>Try another title or clear your filters.</p><button type="button" onClick={reset}>Reset filters</button></div>}
-      <footer className="media-footer"><p>Updated November 25, 2026<br />Dates show when I logged each entry. A log entry doesn’t imply a completed series.</p></footer>
+      <footer className="media-footer"><p>Updated November 26, 2026<br />Dates show when I logged each entry. A log entry doesn’t imply a completed series.</p></footer>
     </div>
   </section>;
 }
